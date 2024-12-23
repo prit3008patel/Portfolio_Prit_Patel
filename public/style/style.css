@@ -1,0 +1,513 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Play:wght@400;700&family=Press+Start+2P&display=swap');
+.press-start-2p-regular {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.play-regular {
+  font-family: "Play", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.play-bold {
+  font-family: "Play", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  max-height: 100%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Default theme (Dark Mode) */
+  --light_white: rgb(205, 205, 205);
+  --bright_white: white;
+  --hacker_green: #00e000;
+  --bg_g_1: rgba(2, 43, 34, 0.601);
+  --bg_g_2: rgb(1, 0, 18);
+  --bg_g_3: rgba(0, 28, 41, 0.827);
+  --bg_g_4: rgb(26, 3, 20);
+  --bg_g_5: rgba(0, 67, 50, 0.858);
+  --black: #000000;
+  --grid: rgba(255, 255, 255, 0.04);
+  --hacker_green_shadow: yellowgreen;
+}
+
+.light-mode {
+  /* Light mode theme */
+  --light_white: rgb(50, 50, 50);
+  --bright_white: black;
+  --hacker_green: #007f00;
+  --bg_g_1: rgba(240, 240, 240, 1);
+  --bg_g_2: rgba(250, 250, 250, 1);
+  --bg_g_3: rgba(220, 220, 220, 1);
+  --bg_g_4: rgba(230, 230, 230, 1);
+  --bg_g_5: rgba(210, 210, 210, 1);
+  --black: white;
+  --grid: rgba(0, 0, 0, 0.05);
+  --hacker_green_shadow: lightgreen;
+}
+
+h3{
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+h4{
+  font-size: 1rem;
+  font-weight: 100;
+}
+h5{
+  font-size: 1rem;
+  font-weight: 100;
+}
+h6{
+  font-size: 0.7rem;
+}
+p{
+  font-size: 18px;
+  font-weight: 100;
+}
+
+ul,
+ol {
+  list-style: none;
+  /* Removes the bullets/numbers */
+  margin: 0;
+  /* Removes the default margin */
+  padding: 0;
+  /* Removes the default padding */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  position: relative;
+  box-sizing: border-box;
+  background:
+    linear-gradient(to bottom right, var(--bg_g_1), transparent 60%),
+    linear-gradient(to top right, var(--bg_g_2), transparent 30%),
+    linear-gradient(to bottom, var(--bg_g_3), transparent 60%),
+    linear-gradient(to bottom left, var(--bg_g_4), transparent 70%),
+    linear-gradient(to top left, var(--bg_g_5), transparent 60%);
+  background-color: var(--black);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  /* font-family: "Play", serif, sans-serif;
+  font-weight: 100; */
+  z-index: 1;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right,
+      var(--grid) 1px,
+      transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 135px 135px;
+  /* Adjust grid size */
+  background-repeat: repeat;
+  /* Ensure grid repeats */
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+header,
+section,
+footer {
+  position: relative;
+  z-index: 10;
+  /* Ensure content is above the background */
+}
+
+/* .navbar {
+  position: relative;
+  padding: 75px 175px 0px 175px;
+} */
+.navbar {
+  position: relative;
+  padding: 75px 175px 0px 175px;
+  display: flex;
+  /* Ensure flex display */
+  flex-direction: row;
+  /* Default direction */
+  justify-content: space-between;
+  /* Adjust as needed */
+  align-items: center;
+  /* Center items vertically */
+}
+
+.star {
+  font-size: 2rem;
+}
+
+.nav i {
+  color: var(--light_white);
+}
+
+.nav_icon,
+.nav_ul li a i {
+  color: var(--bright_white) !important;
+  text-shadow: 0px 0px 30px var(--bright_white);
+}
+
+.nav-link {
+  height: 100%;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--light_white);
+}
+
+.nav_ul {
+  height: 100%;
+}
+
+#themeToggle {
+  border: none;
+  background-color: transparent;
+}
+
+.green_shadow {
+  color: var(--hacker_green) !important;
+  text-shadow: 0px 0px 50px var(--hacker_green_shadow) !important;
+}
+
+.nav_ul li a:hover,
+.nav_ul li a i:hover,
+.link_hover:hover,
+.contact_link_hover:hover,
+.nav_ul li button i:hover {
+  color: var(--hacker_green) !important;
+  text-shadow: 0px 0px 50px var(--hacker_green_shadow) !important;
+}
+
+/* .nav_ul li button i */
+
+.main_content {
+  padding-bottom: 50px;
+  margin-top: 100px;
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+.basic_info {
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.basic_info p {
+  line-height: 2;
+  font-size: 1.2rem;
+  padding: 5px 0px;
+  font-weight: 100;
+}
+
+.name,
+.white_font {
+  color: var(--bright_white) !important;
+}
+
+/* .name_name{
+    text-shadow: 0px 0px 30px var(--bright_white) !important;
+} */
+.name h1 {
+  margin-top: 40px;
+  font-size: 2rem;
+  font-family: "Press Start 2P", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+/* body h1{
+  font-size: 40px;
+  font-family: "Press Start 2P", serif;
+  font-weight: thin;
+} */
+
+
+.basic_info {
+  color: var(--light_white);
+}
+
+.link_hover {
+  color: var(--bright_white);
+  text-shadow: 0px 0px 20px var(--bright_white);
+  transition: transform 0.2s ease;
+}
+
+.contact_icons {
+  font-size: 1.75rem;
+  color: var(--bright_white);
+  padding: 20px 30px;
+}
+
+.contact_link> :first-child {
+  padding-left: 0;
+}
+
+.contact_link> :last-child {
+  padding-right: 0;
+}
+
+.contact_link_hover:hover {
+  text-shadow: 0px 0px 10px var(--hacker_green_shadow) !important;
+}
+
+
+.footer_container {
+  padding-left: 15px;
+  display: flex;
+}
+
+
+.about_container {
+  margin-top: 100px;
+}
+
+.about_container h1 {
+  color: var(--bright_white);
+}
+
+.timeline {
+  width: 80%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 2px auto;
+}
+
+.timeline-middle {
+  position: relative;
+  background-image: linear-gradient(45deg, var(--hacker_green), var(--bright_white), var(--hacker_green));
+  width: 2px;
+  height: 100%;
+}
+
+.timeline-circle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: solid 1px black;
+  background-image: linear-gradient(180deg, var(--bright_white), var(--bright_white));
+  transform: translateX(-50%);
+}
+
+.timeline-content {
+  padding: 10px;
+  color: var(--light_white);
+  transition: 0.4s ease;
+  overflow-wrap: break-word !important;
+  line-height: 1.5;
+}
+
+.timeline-content h3 {
+  color: var(--bright_white);
+}
+
+.timeline-content p,
+.timeline-content ol li span {
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.timeline-component {
+  margin: 0px 20px 0px 20px;
+}
+
+.main-middle {
+  opacity: 0;
+}
+
+
+
+.project_div {
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.pro_div {
+  display: block;
+  /* Ensure the anchor tag behaves like a block element */
+  text-decoration: none;
+  /* Remove underline from links */
+  color: inherit;
+  /* Inherit text color from parent */
+}
+
+.project_div img {
+  height: 400px;
+}
+
+.project1 h3,
+.project2 h3 {
+  padding-left: 20px;
+}
+
+.pro_div_img1 {
+  height: 400px;
+  width: 630px;
+  background-image: url(/Portfolio_html_css/public/images/flexframe/1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: imagechange1 30s infinite ease-in-out;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.pro_div_img2 {
+  height: 400px;
+  width: 630px;
+  background-image: url(/Portfolio_html_css/public/images/pixelcraft/1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: imagechange2 50s infinite ease-in-out;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.project1:hover .pro_div_img1,
+.project2:hover .pro_div_img2 {
+  opacity: 0.2;
+  /* Change opacity of the image */
+  border-radius: 5px;
+}
+
+.project1 {
+  position: relative;
+}
+
+.project2 {
+  position: relative;
+}
+
+.project1_details,
+.project2_details {
+  position: absolute;
+  top: 0;
+  height: 450px;
+  width: 630px;
+  padding: 100px 50px 20px 40px;
+  display: none;
+}
+
+.project1:hover .project1_details,
+.project2:hover .project2_details {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes imagechange1 {
+  0% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/1.png);
+  }
+
+  20% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/2.png);
+
+  }
+
+  40% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/3.png);
+
+  }
+
+  60% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/4.png);
+
+  }
+
+  80% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/5.png);
+
+  }
+
+  100% {
+    background-image: url(/Portfolio_html_css/public/images/flexframe/6.png);
+
+  }
+
+}
+
+@keyframes imagechange2 {
+  0% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/1.png);
+  }
+
+  20% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/2.png);
+  }
+
+  30% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/3.png);
+  }
+
+  40% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/4.png);
+  }
+
+  50% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/5.png);
+  }
+
+  60% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/6.png);
+  }
+
+  70% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/7.png);
+  }
+
+  80% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/8.png);
+  }
+
+  90% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/9.png);
+  }
+
+  100% {
+    background-image: url(/Portfolio_html_css/public/images/pixelcraft/10.png);
+  }
+
+}
