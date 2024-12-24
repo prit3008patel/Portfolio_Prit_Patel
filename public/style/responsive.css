@@ -38,6 +38,9 @@
         justify-content: center;
         text-align: center;
     }
+    .pro_div{
+      min-height: 400px;
+    }
 
 
 }
@@ -60,6 +63,7 @@
       .project_div{
         flex-direction: column !important;
     }
+
   }
   
   /* Viewport 450px */
