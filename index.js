@@ -1,3 +1,20 @@
+  const cursorDot = document.querySelector("[data-cursor-dot]");
+  window.addEventListener("mousemove",(e)=>{
+    const posX = e.clientX;
+    const posY = e.clientY;
+
+    cursorDot.style.left = `${posX}px`;
+    cursorDot.style.top = `${posY}px`;
+    cursorDot.style.display = "block";
+
+    function mouseStopped(){
+      cursorDot.style.display = "none";
+    };
+  });
+  window.addEventListener("mouseout",()=>{
+    cursorDot.style.display = "none";
+  });
+  
   const themeToggle = document.getElementById('themeToggle');
 
   themeToggle.addEventListener('click', () => {
